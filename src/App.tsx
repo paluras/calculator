@@ -23,6 +23,7 @@ import './App.scss'
     const clickedButtonValue = event.currentTarget.value;
 
     switch (clickedButtonValue) {
+      
       case "RESET":
         setCount("");
         break;
@@ -30,6 +31,9 @@ import './App.scss'
         setCount(count.slice(0, -1));
         break;
       case "=":
+        if(count == ""){
+          return setCount("")
+        }
         try {
           setCount(eval(count));
         } catch (error) {
