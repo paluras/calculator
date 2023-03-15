@@ -2,28 +2,17 @@ import { JSXElementConstructor, ReactElement, ReactFragment, useState } from 're
 
 import './App.scss'
 
-
-function App() {
+  function App() {
   const [count, setCount] = useState("")
   const [lightMode, setLightMode] = useState(false)
   const [colorss, setColorss] = useState("dark")
 
-  
-  
-  
   let stylePage: any =  {backgroundColor:colorss}
 
- 
-  
   function handleCheck(event : React.MouseEvent<HTMLInputElement>){
       setLightMode(!lightMode)
         
       lightMode?setColorss("dark"): setColorss("light")
-       
-   
-      
-       
-     
   }
 
   console.log(lightMode);
@@ -57,19 +46,10 @@ function App() {
   const theMap:any = btns.map((e: string | undefined) =>
   <button id={colorss+e} onClick={handleDisplay} key={e} value={e} className={e}>{e}</button>)
 
-
-  
-  
-
   let reskin= [1]
   const theSwitch = reskin.map(e => <input onClick={handleCheck} value={"true"} key={e} type={'checkbox'}></input> )
   
-  
  // made darkmode class in CSS and use state to asigne the name of the hmtl 
-  
-  
-
-  
   
   return (
   <div className="root" id={colorss+'root'}> 
